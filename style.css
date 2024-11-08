@@ -9,26 +9,25 @@
 }
 
 .images{
-	border: solid 2px;
+	border: solid 1px;
 	border-radius: 10px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: 10px;
+	margin: 30px;
+	width: 200px;	
+	margin-left: 50px;
+	margin-right: 50px;
 
 }
 
 .block{
-	
-	align-items: end;
-
+	text-align: center;
 	padding: 10px;
-	margin: 20px;
+
 	
 }
 
 
 .block2{
+	text-align: center;
 	margin-bottom: 17px;
 	width:100%;
 	padding-left: 5%;
@@ -62,7 +61,7 @@ a{
 	
 }
 .carte{
-	position: relative;
+
 	border: solid 1px;
 	border-radius: 10px;
 	width:200px;
@@ -82,7 +81,6 @@ nav{
 	padding: 7px;
 	text-align: start;
 	font-size: 20px;
-	width: 1;
 }
 
 @media screen and (max-width: 800px){ 
