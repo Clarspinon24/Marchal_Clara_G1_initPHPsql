@@ -1,0 +1,96 @@
+.menu{
+	border: solid 2px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	height: 350px;
+	background-color: #F1F1F1;
+}
+
+.images{
+	border: solid 2px;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 10px;
+
+}
+
+.block{
+	
+	align-items: end;
+
+	padding: 10px;
+	margin: 20px;
+	
+}
+
+
+.block2{
+	margin-bottom: 17px;
+	width:100%;
+	padding-left: 5%;
+	padding-right: 5%;
+	height: 350px;
+}
+
+.block3{
+	
+	padding: 10px;
+	margin: 20px;
+	width: 200px;
+	height: 332px;
+	
+}
+
+.block4{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: end;
+	padding: 10px;
+	
+
+	
+}
+a{
+	margin-left:20px;
+	text-decoration: none;
+	color: black;
+	
+}
+.carte{
+	position: relative;
+	border: solid 1px;
+	border-radius: 10px;
+	width:200px;
+	margin: 10px;
+
+	
+}
+
+.search{
+	width: 210px;
+
+}
+
+nav{
+	border: solid 1px;
+	border-radius: 10px;
+	padding: 7px;
+	text-align: start;
+	font-size: 20px;
+	width: 1;
+}
+
+@media screen and (max-width: 800px){ 
+	.block {
+		width: 100%;
+	}
+}
+
+html{
+	background-image: url(font.jpeg);
+}
