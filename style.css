@@ -81,14 +81,17 @@ a{
 	
 }
 .carte{
-	color: black;
+	
 	border: solid 2px;
 	border-radius: 10px;
 	width:200px;
 	margin: 10px;
-
-	
-}
+	transition: 0.3s;
+  }
+  
+  .carte:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
 
 .search{
 	width: 210px;
@@ -121,7 +124,7 @@ nav{
 		margin-top: 20%;
 	}
 }
-@media screen and (max-width:580px){ 
+@media screen and (max-width:1580px){ 
 .bandeau3{
 		opacity: 0;
 	
@@ -160,9 +163,10 @@ h1{
 	font-size: 60px;
 }
 .input{
-	color:black;
 	margin-left: 10px;
 	width: 210px;
 	margin-bottom: 20px;
 	border-radius: 5px;
 }
+
+
