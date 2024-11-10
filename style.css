@@ -81,7 +81,7 @@ a{
 	
 }
 .carte{
-
+	color: black;
 	border: solid 2px;
 	border-radius: 10px;
 	width:200px;
@@ -99,7 +99,7 @@ nav{
 	z-index: 1;
 	border: solid 1px;
 	border-radius: 10px;
-	padding: 7px;
+	padding: 15px;
 	text-align: start;
 	font-size: 20px;
 	background-color: rgb(254, 254, 254)
@@ -140,6 +140,9 @@ html{
 		opacity: 0;
 		width: 100px;
 	}
+footer{
+	opacity: 0;
+}
 }
 
 .bandeau3{
@@ -156,9 +159,10 @@ h1{
 	font-family:'Courier New', Courier, monospace;
 	font-size: 60px;
 }
-input{
+.input{
+	color:black;
 	margin-left: 10px;
-	width: 200px;
+	width: 210px;
 	margin-bottom: 20px;
 	border-radius: 5px;
 }
