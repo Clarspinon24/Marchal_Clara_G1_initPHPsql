@@ -20,16 +20,25 @@
             form {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 margin: 10px;
+                width: 50%;
+                height: 350px;
+                border: 1px solid;
+                border-radius: 20px;
             }
             input {
-                width: 200px;
+                display: flex;
+                justify-content: center;
+
+                width: 400px;
                 margin-top: 10px;
                 padding: 5px; /* Ajout d'un peu de padding pour le confort */
                 border: 1px solid #ccc; /* Bordure par défaut */
             }
             #submit {
-                width: 200px;
+                width: 400px;
                 margin-top: 10px;
             }
             label {
@@ -38,17 +47,23 @@
             .success {
                 border: 1px solid rgb(35, 119, 62);
                 background-color: rgb(116, 160, 50);
-                color: white; /* Changer la couleur du texte pour le contraste */
+                color: white;
             }
-            .message.error.visible{
+            .visible {
                 display: block;
+                color: red; /* Couleur pour les messages d'erreur */
             }
+            .error {
+                display: none; /* Masquer par défaut */
+             }
+
+        
         </style>
     </header>
 
   
 <main>  
-    <form action="" method="post" enctype="multipart/form-data">
+    <form id = "form" action="" method="post" enctype="multipart/form-data">
     
         <label for="pseudo">Pseudo</label>
         <input type="text" id="pseudo" name="pseudo" required minlength="6" maxlength="8" size="10" />
@@ -57,16 +72,22 @@
         <input type="email" id="mail" name="email" placeholder="Entrez votre email" required />
 
         <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" required minlength="8" />
+        <input type="password" id="password" name="password" />
 
+        <ul id="errorList" class="error"></ul> <!-- Liste des erreurs -->
+     
         <button type="submit" id="submit">Soumettre</button>  
     </form>
     
     <script>
 
-        let form = document.querySelector('form');
+        let form = document.querySelector('#form');
+        let errorContainer = document.getElementById('errorList');
+
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); 
+            event.preventDefault(); // Empêche l'envoi du formulaire
+            errorContainer.innerHTML = ''; // Réinitialiser les messages d'erreur
+            
 
             let mail = document.getElementById('mail');
             let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expression régulière pour valider l'email
@@ -74,37 +95,50 @@
             if (mail.value.trim() === '') { 
                 console.log('Email invalide : champ vide.');
             } else if (!emailPattern.test(mail.value.trim())) {
-                console.log('Invalide');
+                console.log('Mail Invalide');
             } else {
-                console.log('Valide')
-               mail.classList.add('success');
+                console.log('Mail Valide')
+                mail.classList.add('success');
             }
+        
+
+            let pseudo = document.querySelector('#pseudo');
+            if (pseudo.value.length >= 6) { // Vérifie si le pseudo a **au moins** 6 caractères
+                console.log('Pseudo Valide')
+                pseudo.classList.add('success');
+            } else {
+                console.log('Pseudo Invalide')
+                errorContainer.classList.add('visible');
+                pseudo.classList.remove('success');
+
+                let err = document.createElement('li');
+                err.innerText = 'Le champ pseudo doit contenir au moins 6 caractères.';
+                errorContainer.appendChild(err);
+            }
+
+              // Validation du mot de passe
+              let password = document.querySelector('#password');
+              let passCheck = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*., ?]).{10,}$");
+
+            // Vérification du mot de passe
+            if (password.value.length < 10 || !passCheck.test(password.value)) {
+                console.log('Mot de Passe Invalide')
+                errorContainer.classList.add('visible'); // Montre les erreurs
+                errorContainer.classList.remove('error'); // Enlève la classe qui cache
+                
+                
+
+                let err = document.createElement('li');
+                err.innerText = 'Le mot de passe doit contenir au moins 10 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.';
+                errorContainer.appendChild(err);
+            } else {
+                console.log('Mot de passe Valide'); // Log pour le débogage
+                password.classList.add('success');
+            }
+        
+      
         });
-
-        let  pseudo = document.querySelector('#pseudo');
-        if (pseudo.value.lengh <6) {
-
-        errorContainer.classList.add('visible');
-        pseudo.classList.remove('success');
-
-        let err = document.createElement('li')
-        err.innerText='Le champs pseudo peut contenir au moins 6 caractères .'
-
-        errorList.appendChild(err)
-        } else {
-            pseudo.classList.add('success')
-        } 
-        
-        let password = document.querySelector('#password');
-        
-        let passCheck = new RegExp (
-       "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*., ?])"
-        ); 
-       
-
-        if (password.value.lengh <10|| passCheck.test(password.value)== false){}
-       
-    </script>
+        </script>
 
       
 
