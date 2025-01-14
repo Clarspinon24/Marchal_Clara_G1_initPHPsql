@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation de formulaire</title>
+</head>
+<body>
+    <header>
+        <nav>    
+            <a href="index.html">Accueil</a>
+            <a href="page2.html">Collection</a>           
+            <a href=page3.html>Page3</a>
+            <a href=page4.html>Page4</a>
+            <a href=inscription.html>Inscription</a>
+            <a href=page5.html>Page5</a>
+        </nav>
+
+        <style>
+            form {
+                display: flex;
+                flex-direction: column;
+                margin: 10px;
+            }
+            input {
+                width: 200px;
+                margin-top: 10px;
+                padding: 5px; /* Ajout d'un peu de padding pour le confort */
+                border: 1px solid #ccc; /* Bordure par défaut */
+            }
+            #submit {
+                width: 200px;
+                margin-top: 10px;
+            }
+            label {
+                margin-top: 10px;
+            }
+            .success {
+                border: 1px solid rgb(35, 119, 62);
+                background-color: rgb(116, 160, 50);
+                color: white; /* Changer la couleur du texte pour le contraste */
+            }
+            .message.error.visible{
+                display: block;
+            }
+        </style>
+    </header>
+
+  
+<main>  
+    <form action="" method="post" enctype="multipart/form-data">
+    
+        <label for="pseudo">Pseudo</label>
+        <input type="text" id="pseudo" name="pseudo" required minlength="6" maxlength="8" size="10" />
+
+        <label for="mail">Email</label>
+        <input type="email" id="mail" name="email" placeholder="Entrez votre email" required />
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" required minlength="8" />
+
+        <button type="submit" id="submit">Soumettre</button>  
+    </form>
+    
+    <script>
+
+        let form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            let mail = document.getElementById('mail');
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expression régulière pour valider l'email
+
+            if (mail.value.trim() === '') { 
+                console.log('Email invalide : champ vide.');
+            } else if (!emailPattern.test(mail.value.trim())) {
+                console.log('Invalide');
+            } else {
+                console.log('Valide')
+               mail.classList.add('success');
+            }
+        });
+
+        let  pseudo = document.querySelector('#pseudo');
+        if (pseudo.value.lengh <6) {
+
+        errorContainer.classList.add('visible');
+        pseudo.classList.remove('success');
+
+        let err = document.createElement('li')
+        err.innerText='Le champs pseudo peut contenir au moins 6 caractères .'
+
+        errorList.appendChild(err)
+        } else {
+            pseudo.classList.add('success')
+        } 
+        
+        let password = document.querySelector('#password');
+        
+        let passCheck = new RegExp (
+       "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*., ?])"
+        ); 
+       
+
+        if (password.value.lengh <10|| passCheck.test(password.value)== false){}
+       
+    </script>
+
+      
+
+    
+</main>
+
+</body>
+</html>

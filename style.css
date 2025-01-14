@@ -5,7 +5,7 @@
 	flex-direction: column;
 	width: 200px;
 	height: 350px;
-	background-color: #F1F1F1;
+	
 }
 
 .images{
@@ -87,10 +87,14 @@ a{
 	width:200px;
 	margin: 10px;
 	transition: 0.3s;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s, box-shadow 0.3s;
+	perspective: 1000px; /* Pour l'effet de perspective */
   }
   
   .carte:hover {
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	transform: rotateY(10deg) rotateX(10deg); /* Rotation 3D */
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée */
   }
 
 .search{
@@ -168,5 +172,4 @@ h1{
 	margin-bottom: 20px;
 	border-radius: 5px;
 }
-
 
