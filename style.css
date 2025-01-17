@@ -5,7 +5,6 @@
 	flex-direction: column;
 	width: 200px;
 	height: 350px;
-	
 }
 
 .images{
@@ -18,7 +17,6 @@
 	padding: 20px;
 	font-size: 20px;
 	background-color: white;
-
 }
 
 .images:hover {
@@ -72,16 +70,13 @@
 	height: 100%;
 	display: flex;
 	padding: 10px;
-	
 }
 a{
 	margin-left:20px;
 	text-decoration: none;
 	color: black;
-	
 }
 .carte{
-	
 	border: solid 2px;
 	border-radius: 10px;
 	width:200px;
@@ -99,7 +94,6 @@ a{
 
 .search{
 	width: 210px;
-
 }
 
 nav{
