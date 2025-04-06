@@ -1,5 +1,23 @@
+const swiper = new Swiper('.swiper', {
+    
+    direction: 'horizontal',
+    loop: true,
+  
+    
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+  
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  
+  });
 
-//Formulaire
+
+//FOrmulaire//
 
 let form = document.querySelector('#form');
 let errorContainer = document.getElementById('errorContainer');
@@ -115,89 +133,3 @@ form.addEventListener('submit', function(event) {
 } 
 
 );
-
-
-//TABLEAU
-
-document.querySelectorAll('li').forEach(element =>{
-    element.addEventListener('click',function(){
-
-        document.querySelectorAll('li').forEach(item=>{
-         item.classList.remove('tab-active');
-        })  
-        this.classList.add('tab-active');
-
-        document.querySelectorAll('div').forEach(item =>{
-        item.classList.add('hide');
-         })  
-
-        if (this.classList.contains('tab-form')) {
-            document.getElementById('formulaire').classList.remove('hide');
-        }
-        if (this.classList.contains('tab-text')) {
-            document.getElementById('text').classList.remove('hide');
-        }
-        if (this.classList.contains('tab-img')) {
-            document.getElementById('image').classList.remove('hide');
-        }
-
-        
-    })
-})
-
-
-
-
-    // COMBAT!!
- class Guerrier {
-        constructor(nom, pv, attaque) {
-            this.nom = nom;
-            this.pv = pv;
-            this.attaque = attaque;
-            this.precision = 0;
-        }
-    
-        Attaque(adversaire) { // adversaire est un élément exterrieur c'est pourquoi on le rentre dans les paramètre et non dans le constructeur
-            
-            if(this.precision < Math.random()){
-            adversaire.pv-= this.attaque
-            console.log(this.nom + " attaque " + adversaire.nom + ": -" + damage);//afficher le resultat
-            console.log(adversaire.nom + " PV restant: " + adversaire.pv);
-        }
-        }
-    
-    
-        Round(adversaire) {
-            while (adversaire.pv > 0 && this.pv > 0) {
-                this.getPrecision();
-                this.getAttack(adversaire);
-    
-               
-                if (adversaire.pv > 0) {
-                    adversaire.getPrecision();
-                    adversaire.getAttack(this); 
-                }
-            }
-    
-            if (this.pv <= 0) {
-                console.log(this.nom + " est KO !");
-            } else {
-                console.log(adversaire.nom + " est KO !");
-            }
-        }
-    }
-    
-    
-    let Dizzy = new Guerrier('Dizzy', 200, 70);
-    let Blaze = new Guerrier('Blaze', 200, 70);
-    
-    Dizzy.Round(Blaze);
-    
-    Dizzy.Round(Blaze);
-    
-    //Button 
-    
-    let sombre = document.querySelector("#sombre")
-    sombre.addEventListener("click", function() {
-    document.body.classList.toggle('black');
-    })

@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validation de formulaire</title>
-    <link rel="stylesheet" type="text/css" href="formulaire.css">
+    <title>Compte</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-   <nav>    
-            <a href="index.html">Accueil</a>
-            <a href="inscription.html">Inscription</a>
-            <a href="page2.html">Collection</a>        
-            <a href=page3.html>Page3</a> 
-            <a href=page4.html>Page4</a>
-            <a href=page5.html>Page5</a> 
-
-             <a id="sombre" src="" name="">Jour/Nuit</a>
+    <nav>
+        <ul>
+            <li><img alt="icon"></li>
             
-           
-        </nav>
-
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="collection.html">Collection</a> </li>          
+            <li><a href=compte.html>Compte</a></li>
+            <li class="deroulant"><a href="#">Sélectionnez un genre... &ensp;</a>
+            <ul class="sous"> 
+                <li><a class="genre" href="page3.html">zouk</a></li>
+                <li><a class="genre" href="page4.html">pop</a></li>
+                <li><a class="genre" href="page5.html">retro</a></li>
+             </li> 
+        </ul> 
+        
+        </nav> 
   
 <main>  
 
            <ul>
-            <li class="tab  tab-form tab-active" >Menu 1</li>
-            <li class="tab  tab-text" >Menu 2</li>
-            <li class="tab  tab-img" >Menu 3</li>
+            <li class="tab  tab-text" >Profil</li>
+            <li class="tab  tab-form tab-active" >Inscription</li>
+            <li class="tab  tab-img" >Favoris</li>
            </ul> 
 
     <div id ="formulaire" class="hide"> 
@@ -52,8 +55,9 @@
 
             
             <div>
-                <input type="checkbox" id="scales" name="scales" checked />
-                <label for="scales">Blablabla accepte les Conditions d'Utilisation</label>
+                <p>Blablabla accepte les Conditions d'Utilisation</p>
+             
+                
             </div>
         
             <button type="submit" id="submit">Envoyer</button>  
@@ -76,11 +80,16 @@
             jkdvgjaebrgkaebvgaedgbalgenadkbgkaebgkaebjgazebgujbaegbzegbizegbolaeighiaeq
         </div>
 
-        <div id="image" class="hide"> <img src="bandeau4.png"></div>
+        <div id="image" class="hide"> <img src="image/bandeau4.png"></div>
 
 
-    <script src="formulaire.js"></script>
+   
 </main>
-
+   <footer>
+    <p>07 69 92 82 21</p>
+    <p>Marchal Clara </p>
+    <p>About Legal Contact</p> 
+    <script src="formulaire.js"></script>
+  </footer>
 </body>
 </html>
