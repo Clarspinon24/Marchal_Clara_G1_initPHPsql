@@ -4,87 +4,54 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Carte</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-   
+        <link rel="stylesheet" type="text/css" href="style.css">  
+        <link rel="stylesheet" type="text/css" href="sombre.css"> 
+        <link rel="stylesheet" type="text/css" href="stylemarketing.css">
+        <link rel="stylesheet" type="text/css" href="pokemon.css">
 
+       
 </head>
+
 <nav>
 <ul>
-    <li><img alt="icon"></li>
+    <li><img class="icon" alt="icon" src="image/mew.png"></li>
     
     <li><a href="index.html">Accueil</a></li>
-	<li><a href="collection.html">Collection</a> </li>          
-	<li><a href=compte.html>Compte</a></li>
-    <li class="deroulant"><a href="#">Sélectionnez un genre... &ensp;</a>
-    <ul class="sous"> 
-        <li><a class="genre" href="page3.html">zouk</a></li>
-        <li><a class="genre" href="page4.html">pop</a></li>
-        <li><a class="genre" href="page5.html">retro</a></li>
+	<li><a href="collection.html">Collection</a> </li>   
+    <button id="sombre"> sombre </button>       
+    <li><a class="genre" href=compte.html><img src="image/profil.png" class="icon1"></a></li>
      </li> 
 </ul> 
-
 </nav>  
+
 <body>
+    <br>
+    <br>
+
 			<h1>Accueil</h1>
-      
-      <h2>Vos Meilleures Pistes Spotify (Long Terme)</h2>
-    <div id="top-tracks-container">
-        <ul id="top-tracks-list"></ul>
-    </div>
-</div>
 
-<script>
-  const token = 'BQCs2FoqXr0bh-6li654heYXP6x300BVqXU4z_O29B0NbHU1lkE_qOYHr1ILFF6HgsoemOqtLEsA50lM8yFqBALE9V6Dqdpa7mxpojZzFfL-tEEXBQRxAOONO7EUGLP_KXclGd96uJeRHSWwg5p7FXqSKpZur6rzImBIYSSeaLVCo_GOzoCCvOWH5UJYvL0kEdK1ozd2CA4yI6VTQ1iH3qAN5kx8dZdcYsLmODfNhi6zmn59e3PqKKb4OGKDqRYB6qZDlpyJmRObqfmylOSn1St4U4R8vJxsNImiNceaGfjSJguEZsQD';
-  const spotifyApiBaseUrl = 'https://api.spotify.com/v1'; // URL de base correcte
-  
-  async function fetchWebApi(endpoint, method, body) {
-      const res = await fetch(`${spotifyApiBaseUrl}/${endpoint}`, {
-          headers: {
-              Authorization: `Bearer ${token}`,
-          },
-          method,
-          body: JSON.stringify(body)
-      });
-      return await res.json();
-  }
-  
-  async function getTopTracks() {
-      // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/#/operations/get-users-top-artists-and-tracks
-      return (await fetchWebApi(
-          'me/top/tracks?time_range=long_term&limit=5', 'GET'
-      )).items;
-  }
-  
-  async function displayTopTracks() {
-            const topTracks = await getTopTracks();
-            const topTracksList = document.getElementById('top-tracks-list');
-
-            if (topTracks && topTracks.length > 0) {
-                topTracks.forEach(({ name, artists }) => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `${name} by ${artists.map(artist => artist.name).join(', ')}`;
-                    topTracksList.appendChild(listItem);
-                });
-            } else {
-                const listItem = document.createElement('li');
-                listItem.textContent = 'Aucune piste trouvée.';
-                topTracksList.appendChild(listItem);
-            }
-        }
-  
-  displayTopTracks(); // Appeler la fonction asynchrone pour exécuter le code
-  </script>
-
-
-      
-	<main>
-	
-
+            <div id="wrapper">
+                <div id="image-wrapper">
+                    <img id="image" src="" alt=""/>
+                </div>
+            </div>
+            
+            <div id="button">Obtient un nouveau pokemon !</div>
+           
 
 </body>
 <footer>
   <p>07 69 92 82 21</p>
   <p>Marchal Clara </p>
   <p>About Legal Contact</p>
+  
+  <script src="app.js"></script>
+
+  <script>    
+    let sombre = document.querySelector("#sombre")
+    sombre.addEventListener("click", function() {
+    document.body.classList.toggle('black');
+    })
+    </script>
 </footer>
 </html>

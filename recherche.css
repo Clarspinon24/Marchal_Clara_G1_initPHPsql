@@ -1,0 +1,21 @@
+.loupe{
+	width: 35px;
+}
+
+.search{
+	font-size: 18px;
+	border: none;
+	background-color: transparent;
+	outline: none;
+	color: rgb(0, 0, 0);
+	width: 320px;
+
+}
+.search-barre{
+	margin-left: 110px;
+	padding: 10px;
+	background-color: #263f353a;
+	border-radius: 30px;
+	width: max-content;
+	display: flex;
+}

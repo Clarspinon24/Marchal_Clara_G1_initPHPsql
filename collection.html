@@ -5,26 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carte</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
+<nav>
+    <ul>
+        <li><img class="icon" alt="icon" src="image/mew.png"></li>
+        
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="collection.html">Collection</a> </li>   
+        <button id="sombre"> sombre </button>       
+        <li><a class="genre" href=compte.html><img src="image/profil.png" class="icon1"></a></li>
+         </li> 
+    </ul> 
+    </nav>  
 <body>
     <img  class="bandeau3" src="font4.jpeg" alt="">
     <header>
-        <nav>
-            <ul>
-                <li><img alt="icon"></li>
-                
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="collection.html">Collection</a> </li>          
-                <li><a href=compte.html>Compte</a></li>
-                <li class="deroulant"><a href="#">Sélectionnez un genre... &ensp;</a>
-                <ul class="sous"> 
-                    <li><a class="genre" href="page3.html">zouk</a></li>
-                    <li><a class="genre" href="page4.html">pop</a></li>
-                    <li><a class="genre" href="page5.html">retro</a></li>
-                 </li> 
-            </ul> 
-            
-            </nav> 
+       <br><br><br>
     </header>
 
     <main>
@@ -35,424 +32,38 @@
             <input class="search" type="search" placeholder="search">
         </div>
          
-    <div class="block4">
+    <div id ="container"></div>
 
                    
-                <div class="block2">
-                    <!--Zouk-->
-                    <div class="block3">
-                                        <div class="carte1">
-                                                    <div class="carte-interne">
-                                                        <div class="carte-devant">
-                                                            <img class="carte" src="image/zouk1.png">
-                                                        </div>
-                                                        <div class="carte-derrière">
-                                                            <p>Ancrée à ton port</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                    </div>    
-                    <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                    <img class="carte" src="image/zouk2.jpg">
-                                </div>
-                                <div class="carte-derrière"> 
-                                    <p>Mon soleil</p>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
+<script src="pokemon.js"></script>
+<script>
+     const containerCarte = document.querySelector('.container-carte');
 
-                    <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                    <img class="carte" src="image/zouk3.png">
-                                </div> 
-                                <div class="carte-derrière">
-                                    <p>On a changé</p>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-
-                    <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                   <img class="carte" src="image/zouk4.png">
-                                </div>
-                                <div class="carte-derrière">
-                                   <p>Se pa pou dat</p>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-
-                    <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                    <img class="carte" src="image/zouk5.png">
-                                </div>
-                                <div class="carte-derrière">
-                                   <p>Sandy</p>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-
-                    <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                    <img class="carte" src="image/zouk6.png">
-                                </div>
-                                <div class="carte-derrière">
-                                     <p>tu m'aimes trop tard</p>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-
-                    <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                   <img class="carte" src="image/zouk7.png">
-                                </div>
-                                <div class="carte-derrière">
-                                      <p>Ki Jan Ke Fe</p>
-                                </div>
-                            </div>
-                        </div>
-                     
-                    </div>
-
-                    <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                   <img class="carte" src="image/zouk8.png">
-                                </div>
-                                <div class="carte-derrière">
-                                  <p>Pa Bizwen Palé</p>
-                                </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-                   
-                    <!--Pop-->
-                    <div class="block3">  <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                   <img class="carte" src="image/pop1.png">
-                                </div>
-                                <div class="carte-derrière">
-                                 <p>Libre</p>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                       <img class="carte" src="image/pop2.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                     <p>APT</p>
-                                    </div>
-                                </div>
-                            </div>
-                           </div>
-                        </div>
-
-                    <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                       <img class="carte" src="image/pop3.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                      <p>T'es pas sexy</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                       </div>
-                    <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                       <img class="carte" src="image/pop4.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                     <p>Je l'aime, je l'aime, je l'aime</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                       <img class="carte" src="image/pop5.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                     <p>Bad Boy Malheureux</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                    </div>
-
-                    <div class="block3">  <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                    <img class="carte" src="image/pop7.png">
-                                </div>
-                                <div class="carte-derrière">
-                                 <p>Ces filles</p>
-                                </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-                   </div>
-
-                    <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                         <img class="carte" src="image/pop8.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                        <p>Louis</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                   </div>
-
-                    <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                         <img class="carte" src="image/pop9.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                      <p>Grandiose</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                      </div>
-
-                    <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                         <img class="carte" src="image/pop10.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                      <p>J'traine des pieds</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                     </div>
-
-                     <!--Retro-->
-                     <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                        <img class="carte" src="image/retro1.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                       <p>Marcia Baïla</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                     </div>
-
-                     <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                        <img class="carte" src="image/retro2.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                      <p>Macumba</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                      </div>
-
-                     <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                         <img class="carte" src="image/retro3.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                       <p>Monday Tuesday...laissez-moi danser</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                    </div>
-
-                     <div class="block3">  <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                    <img class="carte" src="image/retro4.png">
-                                </div>
-                                <div class="carte-derrière">
-                                  <p>Resiste</p>
-                                </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-                  </div>
-                     <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                       <img class="carte" src="image/retro+1.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                     <p>Oh Pretty Woman</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                    </div>
-
-                    <div class="block3">  <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                   <img class="carte" src="image/retro+2.png">
-                                </div>
-                                <div class="carte-derrière">
-                                 <p>She's a lady</p>
-                                </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-                </div>
-                    <div class="block3">
-                        <div class="block3">
-                            <div class="carte1">
-                                <div class="carte-interne">
-                                    <div class="carte-devant">
-                                        <img class="carte" src="image/retro+3.png">
-                                    </div>
-                                    <div class="carte-derrière">
-                                      <p>Only you</p>
-                                    </div>
-                                </div>
-                            </div>
-                          
-                        </div>
-                      </div>
-
-                    <div class="block3">  <div class="block3">
-                        <div class="carte1">
-                            <div class="carte-interne">
-                                <div class="carte-devant">
-                                     <img class="carte" src="image/retro+4.png">
-                                </div>
-                                <div class="carte-derrière">
-                                     <p>Hit the Road Jack</p>
-                                </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-              </div>
-                </div>
+        containerCarte.addEventListener('click', () => {
+        containerCarte.classList.toggle('flip');
+}); 
+</script>
           
-                <script>
-                   	const searchInput = document.querySelector('.search-barre');
-                    const cartes = document.querySelectorAll('.carte1');
-
-                    let titre =[]
-
-                    function getCardTitle(carte) {
             
-                    const titre = carte.querySelector('.carte-titre');
- 
-                
-                
-                }
-
-                    cartes.forEach(carte => {
-                        carte.addEventListener('click', () => {
-                            const carteInterne = carte.querySelector('.carte-interne');
-                            const isFlipped = carteInterne.style.transform === 'rotateY(180deg)';
-                            carteInterne.style.transform = isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)';
-                        });
-                    });
-
-                    searchInput.addEventListener("input",e =>{
-                    const v = e.target.value;
-                    cartes.forEach(cartes =>{
-                        const title = getCardTitle(cartes).toLowerCase();
-                        const estVisible =  titre.includes(v)
-                        cartes.element.classList.toggle("hide"),!estVisible })
-                    
-                    });
-
-                </script>
     </div>
    </main>
    <footer>
     <p>07 69 92 82 21</p>
     <p>Marchal Clara </p>
     <p>About Legal Contact</p>
+    <script>    
+        
+       
+        let sombre = document.querySelector("#sombre");
+
+        sombre.addEventListener("click", function() {
+        document.body.classList.toggle('black');
+        }) 
+        
+       
+        </script>
+
+       
   </footer>
 </body>
 </html>
