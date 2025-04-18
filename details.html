@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="details.css">  
+</head>
+
+
+<body>
+    <img id="image" src="" alt=""/>
+    <div class=" text"> 
+    <p id="nom"></p>
+    <br>
+    <p id="type"></p>
+    <br>
+    <p id="Poids"></p>
+    </div>
+  
+
+</body>
+<script>
+const contenu = localStorage.getItem("Idpoke");
+let image = document.getElementById("image");
+let nom = document.getElementById("nom");
+let type = document.getElementById("type");
+let poids = document.getElementById("Poids");
+
+
+async function dataPokemon() { 
+
+let request = `https://pokeapi.co/api/v2/pokemon/${contenu}`;
+
+let data= await fetch(request);
+
+let response = await data.json();
+console.log(response);
+
+image.src = response.sprites.front_default;
+nom.textContent =`Nom : ${response.name}` ; 
+
+type.textContent =`Type 1 : ${response.types[0].type.name}, ${response.types[1].type.name} `;
+
+poids.textContent = `Poids : ${response.height} kg`;
+}
+
+dataPokemon()
+
+</script>
+</html>

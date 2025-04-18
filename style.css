@@ -4,7 +4,7 @@
 	font-family: Avenir, sans-serif;
 }
 html{
-    background-color: #D8E5D4;
+    
 	height: 100%;
 	margin: 0;
 }
@@ -17,10 +17,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+	background-color: #c5d2aa;
+	
 }
+
 main {
-    flex: 1; /* Permet au contenu principal de prendre tout l'espace disponible */
-    overflow-y: auto; /* Ajouté pour permettre le défilement du contenu principal */
+    flex: 1;
+    overflow-y: auto; 
+	margin-bottom: 65px;
+	z-index: 1;
+
 }
 a{
 	color: black;
@@ -49,7 +55,7 @@ a{
   }
   
 nav{
-	z-index: 1;
+	z-index: 2;
 	border: solid 1px;
 	border-radius: 0px;
 	text-align: start;
@@ -64,10 +70,15 @@ nav{
 }
 
 .icon{
-	width: 90px;
+	width: 40px;
+	margin: 10px;
+	height: 40px;
+
 }
 .icon1{
-	width: 50px;
+	width: 40px;
+	margin: -20px;
+	height: 40px;
 }
 
 
@@ -85,8 +96,10 @@ nav ul{
 }
 
 nav ul li{
+	/*display: flex;
+	justify-items: center;*/
 	float: left;
-	width: 25%;
+	width: 15%;
 	text-align: center;
 	position: relative;
 }
@@ -98,12 +111,12 @@ nav ul::after{
 }
 
 nav a{
-	display: block;
 	text-decoration: none;
 	color:#868F6F;
 	border-color: black;
 	border-bottom: 2px solid transparent;
-	padding: 10px 0px;
+	padding: 10px;
+	margin-top: 20px;
 }
 
 nav a:hover{
@@ -238,7 +251,7 @@ ul{
 }
 h1{
 	margin-left: 20px;
-	margin-top: 100px;
+	margin-top: 50px;
 	text-align: center;
 	font-family:'Courier New', Courier, monospace;
 	font-size: 60px;
@@ -260,40 +273,46 @@ input{
 .genre{
 	margin-left: auto; 
     width: 50px;
-	display: flex;
-	justify-content: center;
- 	box-sizing: border-box;
+
 }
 
 
 /*CARTE*/
 
 #container{
-display: grid;
+display: flex;
+flex-wrap: wrap;
 justify-content: center;
-grid-template-columns: repeat(4,1fr); 
+margin-top: 10px;
 }
 
-.carte{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	border: solid 2px;
-	border-radius: 10px;
-	backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	
-  }
-  
 .container-carte {
-	position: relative;   
-	width: 200px;
-	height: 200px; 
-	perspective: 600px;
-	margin: 20px;
+	
+    perspective: 1000px; 
+    width: 230px;
+    height: 280px;
 	cursor: pointer;
+	margin: 10px;
+	margin-bottom: 30px;
 	transform-style: preserve-3d;
+}
 
+.carte {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    transition: transform 0.5s ease; 
+	
+}
+
+
+.container-carte.rotated .carte-devant {
+    transform: rotateY(-180deg);
+}
+
+.container-carte.rotated .carte-dos {
+    transform: rotateY(0deg);
 }
 
 
@@ -301,6 +320,8 @@ grid-template-columns: repeat(4,1fr);
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: solid 2px;
+	border-radius: 10px;
 	background-color: aliceblue;
 }
 
@@ -315,9 +336,6 @@ grid-template-columns: repeat(4,1fr);
 	transform: rotateY(180deg);
 }
 
-.flip{
-	transform: rotateY(180deg);
-}
 /* */
 
 /*BARRE DE RECHERCHE*/
@@ -330,17 +348,23 @@ grid-template-columns: repeat(4,1fr);
 	border: none;
 	background-color: transparent;
 	outline: none;
-	color: rgb(0, 0, 0);
-	width: 320px;
-
+	color: rgb(227, 221, 221);
+	width: 320px;	
 }
+
+::placeholder {
+		color: rgb(255, 255, 255);
+		font-size: 1.5em;
+	  }
 .search-barre{
-	margin-left: 110px;
+	margin: 50px;
 	padding: 10px;
 	background-color: #263f353a;
+	border: 2px solid black;
 	border-radius: 30px;
 	width: max-content;
 	display: flex;
+	flex-direction: row;
 }
 /*END*/
 
@@ -393,6 +417,7 @@ label{
 button{
     border: 1px solid;
     border-radius: 6px;
+	cursor: pointer;
 }
 .errorContainer{
 	margin: 10px ;
@@ -417,7 +442,7 @@ height: 1500px;
 
 /*MODE SOMBRE*/
 .black{
-    background-color:rgb(47, 43, 43);
+    background-color:rgba(47, 43, 43, 0.738);
     color: white;
 }
 
@@ -425,7 +450,8 @@ height: 1500px;
        border: 1px solid;
        border-radius: 10px;
        padding: 10px;
-       margin: 30px;
+	   height: 35px;
+       margin: 10px;
        box-shadow: rgb(189, 185, 185);
       
 }
@@ -475,6 +501,7 @@ img{
     width: 90%;
     display: flex;
     justify-self: center;
+	
 }
 
 .swiper-button-prev{
@@ -517,7 +544,101 @@ h2{
 footer {
    display: flex;
     padding: 20px;
-    text-align: center;
-    position: sticky;
-    bottom: 0;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
 }
+
+.idpoke{
+	width: 85px;
+	padding: 2px;
+	margin-left: -158px;
+	margin-top: 300px;
+	
+
+}
+
+footer {
+position: relative;
+grid-area: footer;
+background-color: #f5f5f5;
+
+}
+
+
+@media (max-width: 768px) {
+    /* Styles pour les écrans de moins de 768px */
+    body {
+        font-size: 14px;
+    }
+	nav{
+		width: 100%;
+	}
+
+	nav a{
+		display: block;
+		width: 100%;
+		font-size: 14px;
+		margin:-10px;
+		height: 50px;
+	}
+	ul{
+		height: 80px;
+	}
+	#sombre{
+		margin: 15px;
+		height: 10px;
+		color: #263f3500;
+		width: 10px;
+		border: 2px solid black;
+	}
+	nav  li{
+		margin:0px;
+		display: flex;
+		justify-items: center;
+	}
+	.icon{
+		width: 50px;
+		margin-left: 50px;
+	
+	}
+	.icon1{
+		width: 28px;
+		margin: 10px;
+		height: 30px;
+	}
+
+	h1{
+		font-size: 24px;
+		margin-top: 45px;
+		margin-bottom: 10px;
+	}
+	.search-barre{
+		width: 50%;
+		height: 8px;
+		margin-top: 50px;
+		margin-bottom: 10px;
+		display: flex;
+		justify-self: center;
+	}
+
+	.search{
+		margin-top: 0px;
+		font-size: 10px;
+	}
+
+	.container-carte{
+		width: 100px;
+		height: 180px;
+		display: grid;
+		grid-template-columns: repeat(6,1fr); 
+		
+	}
+	.loupe{
+		width: 10px;
+	}
+	
+}
+

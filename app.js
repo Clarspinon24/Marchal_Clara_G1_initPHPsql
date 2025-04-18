@@ -5,6 +5,9 @@ let image = document.getElementById("image");
 
 const changePokemon = async() => { // fonction fléchée
     let randomNumber = Math.ceil(Math.random()*150)+1; //[1,151]
+
+    // plus de l'aléatoire mais de la selection 
+    // récupère le numéro des cartes choisis
     
     let request = `https://pokeapi.co/api/v2/pokemon/${randomNumber}`;
 
@@ -16,10 +19,9 @@ const changePokemon = async() => { // fonction fléchée
 
 
     image.src = response.sprites.front_default;
-
+    // et le reste des données
 
 }
-
 
 
 changePokemon();
