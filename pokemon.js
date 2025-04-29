@@ -34,11 +34,11 @@ async function fetchPokemon(){
         carte.innerHTML = `
           
                 <div class="carte carte-devant">
-                    <img  src="${image.src}" alt="Carte">
+                    <img  src="${image.src}" alt="Carte"> 
+                     <p id ="text-carte">${image.text}</p>
                 </div>
-                <div class="carte carte-dos">
-                    <p>${image.text}</p>
-                </div>
+                  
+                
               
         `;
        
