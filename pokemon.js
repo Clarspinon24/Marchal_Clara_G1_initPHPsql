@@ -66,6 +66,9 @@ async function fetchPokemon(){
                     <img  src="${image.src}" alt="Carte"> 
                      <p id ="text-carte">${image.text}</p>
                 </div>
+                  
+                
+              
         `;
        
 
