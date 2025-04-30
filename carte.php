@@ -4,7 +4,7 @@ require_once("connexion.php");
 
 if ($_POST) {
 
-    $idpokemon = $_POST["idpokemon"];
+    $idpokemon = $_POST["idpokemon"]?? null;;
     $namepoke = $_POST["namepoke"];
     $sprite = $_POST["sprite"];
     $types = $_POST["types"];
@@ -18,7 +18,9 @@ if ($_POST) {
     
     try {
         $stmt = $pdo->prepare("INSERT INTO cards (idpokemon,namepoke,sprite,types,poids, stade_evol, taille) 
-    VALUES(:idpokemon,:namepoke,:sprite,:types,:poids, :stade_evol, :taille) ");
+    VALUES(:idpokemon,:namepoke,:sprite,:types,:poids, :stade_evol, :taille) "); 
+    // les variable avec les : sont comme les paramètres d'une fonction
+
 
         $stmt->execute([
          "idpokemon" => $idpokemon,
@@ -55,39 +57,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'delete') {
 
 }
 
-if (isset($_GET['action'], $_GET['idpokemon']) && $_GET['action'] === 'modify') {
-    // On récupère l'ID de la carte à modifier
-    $idpokemon = (int) $_GET['idpokemon'];
 
-    try {
-        // 1) On récupère les données existantes en BDD
-        $stmt = $pdo->prepare("SELECT * FROM cards WHERE idpokemon = :idpokemon");
-        $stmt->execute(['idpokemon' => $idpokemon]);
-        $cardToEdit = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!$cardToEdit) {
-            throw new Exception("Carte introuvable pour l'ID $idpokemon.");
-        }
-        // À ce stade, $cardToEdit contient :
-        // [
-        //   'idpokemon'  => 3,
-        //   'namepoke'   => 'Pikachu',
-        //   'sprite'     => 'https://...png',
-        //   'types'      => 'Électrik',
-        //   'poids'      => 6,
-        //   'stade_evol' => 'De base',
-        //   'taille'     => 0.4
-        // ]
-
-
-    } catch (PDOException $e) {
-        echo "Erreur SQL : " . $e->getMessage();
-        exit;
-    } catch (Exception $e) {
-        echo $e->getMessage();
-        exit;
-    }
-}
 
 
 
@@ -96,19 +66,16 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
-         <table border="1">
-        <thead>
-            <th>Nom</th>
-            <th>Image</th>
-            <th>Types</th>
-            <th>Poids</th>
-            <th>Stade Evolution</th>
-            <th>Taille</th>
-            <th>Supprimer</th>
-            <th>Modifier</th>    
-        </thead>
 
-        <tbody>
+
+   <button type=""><a href="index.php">Accueil</a></button> 
+
+     
+</ul> 
+</nav>  
+
+
+        
         <form method="POST" action="">
 
 
@@ -129,38 +96,46 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         <label for="taille">Taille:</label>
         <input type="number" name="taille" id="taille" placeholder="Tailles">
-        
-        <input type="hidden" name="idpokemon" value="<?= $cardToEdit['idpokemon'] ?>">
-        <input name="namepoke" value="<?= htmlspecialchars($cardToEdit['namepoke']) ?>">
 
+        
         <input id="" name="" type="hidden" value="">
 
         <input type="submit" value="Créer  une carte">
 
         </form>
             <?php
-
+                
             foreach ($cartes as $key => $cards) {
-                echo "<tr>";
-                echo "<td>" .  $cards["idpokemon"]. "</td>";
-                echo "<td>" . $cards["namepoke"]. "</td>";
-                echo "<td>" .  $cards["sprite"] . "</td>";
-                echo "<td>" . $cards["types"]. "</td>";
-                echo "<td>" . $cards["poids"] . "</td>";
-                echo "<td>" . $cards["stade_evol"]. "</td>";
-                echo "<td>" . $cards["taille"]. "</td>";
+                echo "<div class='carte'>";
+                echo "<p> N°" .  $cards["idpokemon"]. "</p>";
+                echo "<p> Nom :" . $cards["namepoke"]. "</p>";
+                echo "<img src=" .  $cards["sprite"] . ">";
+                echo "<p> Types:" . $cards["types"]. "</p>";
+                echo "<p> Poids :" . $cards["poids"] . "</p>";
+                echo "<p>Stade Evolution :" . $cards["stade_evol"]. "</p>";
+                echo "<p> Tailles:" . $cards["taille"]. "</p>";
                 
-                echo "<td> <a href='?idpokemon=". $cards["idpokemon"] ."&action=delete'> Supprimer </a> </td>";
-                echo "<td> <a href='?idpokemon=". $cards["idpokemon"] . "&action=modify'> Modifier </a> </td>";
+                echo "<a href='?idpokemon=". $cards["idpokemon"] ."&action=delete'> Supprimer </a> ";
+                echo "<br>";
+                echo "<a href='modifier.php?idpokemon=" . $cards['idpokemon'] . "'>Modifier</a>";
                 
-                echo "</tr>";
+                echo "</div>";
 
             }
             
 
             ?>
 
-            </tbody>
-         </table>
-        </div>
-     
+            <style>
+            .carte{
+                margin:10px;
+                padding:25px;
+                border: 1px solid ;
+                border-radius:10px;
+                width: 200px;
+                justify-content:center;
+            }
+            img{
+               width: 100px;
+            }
+            </style>
