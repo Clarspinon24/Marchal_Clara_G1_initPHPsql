@@ -6,22 +6,23 @@ require_once("connexion.php");
 
 if(isset($_SESSION["iduser"])) {
     header("location:compte.php");
-}
+} // ici c'est l'oposé de compte.php c'est à dire si la session à un iduser on se dirige automatiquement vers la page compte
 
 if ($_POST) {
 
-    $mail = trim($_POST["mail"]);
+    $mail = trim($_POST["mail"]); // trim permet d'enlever les espaces
     $password = trim($_POST["password"]);
 
-    if ($mail && $password) {
+    if ($mail && $password) { // si on a le mail et le mot de passe
 
         
-        $stmt = $pdo->query("SELECT * FROM user WHERE mail = '$mail' ");
+        $stmt = $pdo->query("SELECT * FROM user WHERE mail = '$mail' "); 
+        //on récupère tout les données de l'utilisateur relié à cet email
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user["password"])) {
-            $_SESSION["iduser"] = $user["iduser"];
-            $_SESSION["mail"] = $user["mail"];
+        if ($user && password_verify($password, $user["password"])) { // on compare les mots de passes
+            $_SESSION["iduser"] = $user["iduser"]; // on  rajoute à la session l'iduser
+            $_SESSION["mail"] = $user["mail"]; // et le mail
             header("location:compte.php");
         } else {
             echo "La connexion a échoué !";
@@ -49,7 +50,7 @@ if ($_POST) {
 
     
 
-    <?php if (!isset($_SESSION["iduser"])) { ?>
+    <?php if (!isset($_SESSION["iduser"])) { ?> <!-- Dans le cas, où on a pas de iduser on remplit le formulaire de connexion -->
         <form method="POST">
         <h4>Connexion</h4>
             <label for="mail">Email:</label>
@@ -63,7 +64,7 @@ if ($_POST) {
 
         </form>
 
-        <a href="inscription.php">Créer un compte</a>
+        <a href="inscription.php">Créer un compte</a> <!--ou on se créer un compte avec la page inscription -->
 
     <?php } ?>
 

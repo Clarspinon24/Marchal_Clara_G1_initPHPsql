@@ -5,17 +5,19 @@ require_once("haut.php");
 require_once("connexion.php");
 
 
-if(!isset($_SESSION["iduser"])) {
+if(!isset($_SESSION["iduser"])) { 
+    // isset permet de savoir si il y a quelque chose à l'intérieur,ici on dis que 
+    // si la session n'a pas de iduser on doit aller au login.
     header("location:login.php");
 }
 
 
 
-if(isset($_GET["action"]) && $_GET["action"] == "deconnexion") {
-    // je vide ma session
-    unset($_SESSION["iduser"]);
-    unset($_SESSION["mail"]);
-    header("location:login.php"); // redirection sans paramètre
+if(isset($_GET["action"]) && $_GET["action"] == "deconnexion") {// si on click sur deconnexion
+    
+    unset($_SESSION["iduser"]);// on enlève iduser de la session
+    unset($_SESSION["mail"]); // de même pour le mail
+    header("location:login.php"); // on ouvre la page login pour pouvoir se reconnecter
 }
 
 
@@ -29,15 +31,16 @@ if(isset($_GET["action"]) && $_GET["action"] == "deconnexion") {
     <title>Document</title>
 </head>
 <body>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br> <!-- simplement pour ne pas être gêné par la nav du fichier php-->
 
     <?php
 
-        echo "Vous êtes connecté avec l'adresse email " . $_SESSION["mail"];
+        echo "Vous êtes connecté avec l'adresse email " . $_SESSION["mail"]; 
+        // affiche que on est connecté en donnant l'adresse mail de connexion
     
     ?>
     
-    <a href="?action=deconnexion">Se déconnecter</a>
+    <a href="?action=deconnexion">Se déconnecter</a><!--lien pour se deconnecter-->
     
 
 
@@ -57,7 +60,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "deconnexion") {
     <p>About Legal Contact</p>
 
     <script>
-
+// Tabs en js
 document.querySelectorAll('li').forEach(element =>{
     element.addEventListener('click',function(){
 
@@ -83,7 +86,7 @@ document.querySelectorAll('li').forEach(element =>{
         
     })
 })
-    //Button 
+    //Button en js
     
     let sombre = document.querySelector("#sombre")
     sombre.addEventListener("click", function() {
