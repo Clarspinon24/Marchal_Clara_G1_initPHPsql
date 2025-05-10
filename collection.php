@@ -61,7 +61,7 @@
     <div id ="container"></div>
 
                    
-<script src="pokemon.js?v=2"></script>
+<script src="pokemon.js?v=3"></script>
 
           
             

@@ -11,7 +11,7 @@ if ($_POST) { // si la connexion marche
 
     try {// try catch permet d'executer le code malgré les erreurs et de les afficher directement sur la page
     $stmt = $pdo->prepare("INSERT INTO user (mail, password)  
-    VALUES(:mail, :password)"); // stmt : 
+    VALUES(:mail, :password)"); // stmt : statement sert pour les requêtes préparées
 
     $stmt->execute([
         'mail' => $mail,//remplace le mail du insert par la variable mail récupérer au dessus avec le post
