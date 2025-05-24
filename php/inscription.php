@@ -1,35 +1,51 @@
+
 <?php
+require_once("haut.php");// haut de la page html 
+require_once("connexion.php");// connexion à la base de donnée
 
-require_once("connexion.php");
+if ($_POST) { // si la connexion marche
+    $mail = $_POST["mail"];// permet de récupérer le mail avec la méthode post
+    $password = $_POST["password"];//pareil
+ 
 
-if($_POST){
 
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    try {// try catch permet d'executer le code malgré les erreurs et de les afficher directement sur la page
+    $stmt = $pdo->prepare("INSERT INTO user (mail, password)  
+    VALUES(:mail, :password)"); // stmt : statement sert pour les requêtes préparées
 
-    $sql = "INSERT INTO user (email, password) VALUES(:email, :password)";
-
-    $stmt = $pdo->prepare($sql);
     $stmt->execute([
-        'email' => $email,
-        'password' => password_hash($password, PASSWORD_DEFAULT)
-    ]);
+        'mail' => $mail,//remplace le mail du insert par la variable mail récupérer au dessus avec le post
+        'password' => password_hash($password, PASSWORD_DEFAULT),
+       // hash modifie le mot de passe de manière aléatoire
+        ]);
 
-    echo "Votre user a été cocrrectement inséré en BDD";
+        header("location:compte.php");// Renvoie vers la page compte.php car l'inscription est fini
+   
+
+    } catch (PDOException $e) { // récupère les erreurs de pdo 
+        echo $e->getMessage(); // les affiche
+    }
 }
+
 ?>
 
 
+     <br><br><br><br><br><br>
 
-<form method="POST">
+ 
+<form id="form" method="POST" action="">
+<!-- action="" permet de transmettre les données du fichier à l'exterieur et post est seulement la méthode utilisé -->
+<h4>INSCRIPTION</h4>
 
-    <label for="email">Email:</label>
-    <input type="text" name="email" id="email" placeholder="Email">
+
+<label for="mail">Email</label>
+<input type="email" id="mail" name="mail" placeholder="Entrez votre email" required  />
+
+<label for="password">Mot de passe</label>
+<input type="password" id="password" name="password"  />
 
 
-    <label for="password">Mot de Passe</label>
-    <input type="text" name="password" id="password" placeholder="Mot de passe">
+<button type="submit" id="submit">Envoyer</button>  
 
-    <input type="submit" value="Inscription">
 
 </form>

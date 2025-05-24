@@ -1,6 +1,7 @@
 <?php require_once("haut.php"); ?>
 
 <body>
+     <div class="content">
     <br><br><br><br> <br> <br> <br><br>
 
             <div id="wrapper">
@@ -11,8 +12,8 @@
             
             <div id="button">Obtient un nouveau pokemon !</div>
            
-            <br>
-            <br> <br> <br>
+            <br><br> <br> <br>
+</div>
 </body>
 <footer>
   <p>07 69 92 82 21</p>
@@ -27,5 +28,7 @@
     document.body.classList.toggle('black');
     })
     </script>
+    
+    <script src="js/sidenav.js"> </script>
 </footer>
 </html>

@@ -1,7 +1,7 @@
 
 <?php
 require_once("connexion.php");
-
+require_once("haut.php"); 
 if ($_POST) {
 
     $idpokemon = $_POST["idpokemon"]?? null;  
