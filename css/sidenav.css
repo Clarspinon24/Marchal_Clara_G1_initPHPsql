@@ -3,7 +3,7 @@
 #toggle-btn {
   position: fixed;
   top: 20px;
-  left: 20px;
+  left: 100px;
   z-index: 1;
   border: none;
   padding: 10px 15px;

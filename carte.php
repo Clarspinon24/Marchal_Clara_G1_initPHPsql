@@ -1,7 +1,8 @@
 
 <?php
 require_once("connexion.php");
-require_once("haut.php"); 
+require_once("haut.php");
+
 if ($_POST) {
 
     $idpokemon = $_POST["idpokemon"]?? null;  
@@ -129,16 +130,4 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             ?>
 
-            <style>
-            .carte{
-                margin:10px;
-                padding:25px;
-                border: 1px solid ;
-                border-radius:10px;
-                width: 200px;
-                justify-content:center;
-            }
-            img{
-               width: 100px;
-            }
-            </style>
+      

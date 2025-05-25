@@ -1,6 +1,7 @@
 let button = document.getElementById("button");
-let image = document.getElementById("image");
-
+let pokemon1 = document.getElementById("pokemon1");
+let pokemon2 = document.getElementById("pokemon2");
+let pokemon3 = document.getElementById("pokemon3");
 
 
 const changePokemon = async() => { // fonction fléchée

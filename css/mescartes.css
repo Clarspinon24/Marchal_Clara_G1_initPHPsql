@@ -1,0 +1,11 @@
+   .carte{
+    margin:10px;
+    padding:25px;
+    border: 1px solid ;
+    border-radius:10px;
+    width: 200px;
+    justify-content:center;
+    }
+    img{
+        width: 100px;
+    }

@@ -5,8 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Carte</title> 
         <link rel="stylesheet" type="text/css" href="css/sidenav.css">
-          <link rel="stylesheet" type="text/css" href="css/style.css">  
-        
+        <link rel="stylesheet" type="text/css" href="css/style.css">  
+         <link rel="stylesheet" type="text/css" href="css/booster.css">
+        <link rel="stylesheet" type="text/css" href="css/mescartes.css">
     
 </head>
 
@@ -15,10 +16,10 @@
 
   <div class="sidebar" id="sidebar">
  <img class="mew" src="image/sidenav.png">
-  <a href="php/index.php">Accueil</a>
-  <a href="php/collection.php">Collection</a>  
-  <a href="php/carte.php">Mes Cartes</a>  
-  <a  href="php/compte.php">Profil</a>
+  <a href="index.php">Accueil</a>
+  <a href="collection.php">Collection</a>  
+  <a href="carte.php">Mes Cartes</a>  
+  <a  href="compte.php">Profil</a>
     <a id="sombre"> <img src="image/sombre.png" alt=""> </a> 
   </div>
  

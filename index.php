@@ -2,17 +2,26 @@
 
 <body>
      <div class="content">
-    <br><br><br><br> <br> <br> <br><br>
-
-            <div id="wrapper">
-                <div id="image-wrapper">
-                    <img id="image" src="" alt=""/>
-                </div>
-            </div>
-            
-            <div id="button">Obtient un nouveau pokemon !</div>
+     <a  id="button"><img class="pochette" src="image/pochette.png" alt=""></a>
            
-            <br><br> <br> <br>
+            <div class="booster">
+                <img id="pokemon1" src="" alt=""/>
+                <p id= "info1"></p>
+            </div>
+
+            <div class="booster">
+                <img id="pokemon2" src="" alt=""/>
+                <p id= "info2"></p>
+            </div>
+
+            <div class="booster">
+                <img id="pokemon3" src="" alt=""/>
+                <p id= "info3"></p>
+            </div>
+                  
+            
+          
+          
 </div>
 </body>
 <footer>
@@ -20,7 +29,7 @@
   <p>Marchal Clara </p>
   <p>About Legal Contact</p>
   
-  <script src="app.js"></script>
+
 
   <script>    
     let sombre = document.querySelector("#sombre")
@@ -30,5 +39,6 @@
     </script>
     
     <script src="js/sidenav.js"> </script>
+     <script src="js/boosters.js"> </script>
 </footer>
 </html>

@@ -49,8 +49,6 @@ async function fetchPokemon(){ // fonction fléchée
       
         container.appendChild(carte);
 
-
-        container.appendChild(carte);
         
 
     });
@@ -58,7 +56,7 @@ async function fetchPokemon(){ // fonction fléchée
 }
 
 fetchPokemon();
-console.log('vatefaire');
+
 
 
        
