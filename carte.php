@@ -71,7 +71,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-   <button type=""><a href="index.php">Accueil</a></button> 
+  
 
      
 </ul> 
@@ -112,7 +112,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 echo "<div class='carte'>"; // crée une div pour faire une carte
                 echo "<p> N°" .  $cards["idpokemon"]. "</p>";// met les informations récoltés dans la div
                 echo "<p> Nom :" . $cards["namepoke"]. "</p>";
-                echo "<img src=" .  $cards["sprite"] . ">";
+                echo "<img id='imag' src=" .  $cards["sprite"] . ">";
                 echo "<p> Types:" . $cards["types"]. "</p>";
                 echo "<p> Poids :" . $cards["poids"] . "</p>";
                 echo "<p>Stade Evolution :" . $cards["stade_evol"]. "</p>";
@@ -129,5 +129,10 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
 
             ?>
+
+ </body>
+    <?php require_once("bas.php"); ?>
+       
+    </html>
 
       

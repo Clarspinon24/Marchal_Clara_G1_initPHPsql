@@ -49,27 +49,25 @@ async function fetchPokemon(){ // fonction fléchée
       
         container.appendChild(carte);
 
+
+   
         
 
     });
 
 }
 
-fetchPokemon();
 
 
-
-       
 
 
 searchBar.addEventListener("keyup", (e) => {
     const searched = e.target.value.trim();
-
+    console.log(searched)
     if (searched.length > 0) {
-        searchAndDisplayPokemon(searched);
+      filterElements (searchedLetters, container);
     } else {
-        container.innerHTML = "";
-        fetchPokemon(); // Recharge les 20 premiers si la recherche est vide
+        container.innerHTML = "Aucun pokemon trouvé";
     }
 });
 

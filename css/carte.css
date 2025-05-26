@@ -1,4 +1,4 @@
-.carte{
+/* .carte{
 	border: solid 2px;
 	border-radius: 10px;
 	width:200px;
@@ -6,7 +6,7 @@
 	transition: 0.3s;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	transition: transform 0.3s, box-shadow 0.3s;
-	perspective: 1000px; /* Pour l'effet de perspective */
+	perspective: 1000px; /* Pour l'effet de perspective 
   }
   
 .carte1 {
@@ -46,4 +46,4 @@
 	border-radius: 10px;
 	transform: rotateY(180deg); 
 	background-color: #cecccc; 
-}
+} */

@@ -4,8 +4,10 @@
     border: 1px solid ;
     border-radius:10px;
     width: 200px;
-    justify-content:center;
+    background-color: rgb(255, 250, 243);
+    color:black;
+
     }
-    img{
+    #imag{
         width: 100px;
     }

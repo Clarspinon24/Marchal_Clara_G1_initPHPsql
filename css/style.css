@@ -2,6 +2,7 @@
 	margin: 0px;
 	padding: 0px;
 	font-family: Avenir, sans-serif;
+	border: 1px solid red;
 }
 html{
     
@@ -278,7 +279,7 @@ input{
 
 
 
-/* */
+
 
 /*BARRE DE RECHERCHE*/
 .loupe{

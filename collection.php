@@ -63,29 +63,12 @@
     <div id ="container"></div>
 
                    
-<script src="pokemon.js?v=3"></script>
+<script src="js/pokemon.js?v=3"></script>
 
           
             
     </div>
    </main>
-   <footer>
-    <p>07 69 92 82 21</p>
-    <p>Marchal Clara </p>
-    <p>About Legal Contact</p>
-    <script>    
-        
-       
-        let sombre = document.querySelector("#sombre");
-
-        sombre.addEventListener("click", function() {
-        document.body.classList.toggle('black');
-        }) 
-        
-       
-        </script>
-
-       
-  </footer>
+   <?php require_once("bas.php"); ?>
 </body>
 </html>

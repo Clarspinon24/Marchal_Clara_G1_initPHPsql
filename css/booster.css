@@ -1,8 +1,9 @@
 .pochette{
     z-index: 0;
-    width: 230px;
+    width: 220px;
     display: flex;
     justify-content: center;
+   
 }
 #pokemon1{
 width: 180px;
@@ -15,3 +16,10 @@ width: 180px;
 width: 180px;
 }
 
+.booster{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   margin-top:30px ;
+    
+}

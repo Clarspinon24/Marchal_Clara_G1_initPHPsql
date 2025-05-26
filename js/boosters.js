@@ -8,16 +8,12 @@ let info3 = document.getElementById("info3");
 const pokemons= [] ;
 
 
-async function booster(){ // fonction fléchée
-    
-    for (let i = 0; i < 3; i++) {
-     let randomNumber = Math.floor(Math.random() * 151) + 1; // [1,151]
-        console.log("Numéro choisi :", randomNumber);
-    
+async function booster(){ 
+
         try{
-        // plus de l'aléatoire mais de la selection 
-        // récupère le numéro des cartes choisis
-        
+         
+        for (let i = 0; i < 3; i++) {
+        let randomNumber = Math.floor(Math.random() * 151) + 1; // floor : c'est un plus petit int mais le plus proche de la valeur
         let request = `https://pokeapi.co/api/v2/pokemon/${randomNumber}`;
 
         let data= await fetch(request);
@@ -28,7 +24,8 @@ async function booster(){ // fonction fléchée
 
         pokemons.push({ src: response.sprites.front_default , text: response.name, id :response.id }) 
 
-       console.log(pokemons);
+       console.log(pokemons); 
+    }
 
         pokemon1.src = pokemons[0].src;
         pokemon1.alt = pokemons[0].text;
@@ -42,11 +39,13 @@ async function booster(){ // fonction fléchée
         pokemon3.alt = pokemons[2].text;
         info3.textContent=pokemons[2].text;
 
+        button.style.display="none";
         
         } catch(error){
             console.error(error);
         }
-    }}
+    }
 
 
 button.addEventListener("click",booster);
+

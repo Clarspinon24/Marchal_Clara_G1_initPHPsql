@@ -1,10 +1,8 @@
 let button = document.getElementById("button");
-let pokemon1 = document.getElementById("pokemon1");
-let pokemon2 = document.getElementById("pokemon2");
-let pokemon3 = document.getElementById("pokemon3");
+let image = document.getElementById("image");
 
 
-const changePokemon = async() => { // fonction fléchée
+async function changePokemon (){ // fonction fléchée
     let randomNumber = Math.ceil(Math.random()*150)+1; //[1,151]
 
     // plus de l'aléatoire mais de la selection 
