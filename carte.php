@@ -1,6 +1,6 @@
 
 <?php
-require_once("connexion.php");
+require_once("php/connexion.php");
 require_once("haut.php");
 
 if ($_POST) {
@@ -69,66 +69,26 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
-
-
-  
-
-     
-</ul> 
-</nav>  
-
-<!--Formulaire pour rajouter des cartes-->
-
-        
-        <form method="POST" action=""> 
-
-        <label for="namepoke">Nom:</label>
-        <input type="text" name="namepoke" id="namepoke" placeholder="Nom Pokemon">
-
-        <label for="sprite">Image:</label>
-        <input type="text" name="sprite" id="sprite" placeholder="Image">
-
-        <label for="types">Types:</label>
-        <input type="text" name="types" id="types" placeholder="Types">
-
-        <label for="stade_evol">Stade Evolution:</label>
-        <input type="text" name="stade_evol" id="stade_evol" placeholder="Stade Evolution">
-
-        <label for="poids">Poids:</label>
-        <input type="number" name="poids" id="poids" placeholder="Poids">
-
-        <label for="taille">Taille:</label>
-        <input type="number" name="taille" id="taille" placeholder="Tailles">
-
-        
-        <input id="" name="" type="hidden" value="">
-
-        <input type="submit" value="Créer  une carte">
-
-        </form>
             <?php
                 
             foreach ($cartes as $key => $cards) {//Pour tout les cartes à l'intérieur de la table cards
-                echo "<div class='carte'>"; // crée une div pour faire une carte
-                echo "<p> N°" .  $cards["idpokemon"]. "</p>";// met les informations récoltés dans la div
-                echo "<p> Nom :" . $cards["namepoke"]. "</p>";
+                echo "<div class=' container-carte'>"; // crée une div pour faire une carte
+                echo"<div class='carte carte-devant'>";
                 echo "<img id='imag' src=" .  $cards["sprite"] . ">";
-                echo "<p> Types:" . $cards["types"]. "</p>";
-                echo "<p> Poids :" . $cards["poids"] . "</p>";
-                echo "<p>Stade Evolution :" . $cards["stade_evol"]. "</p>";
-                echo "<p> Tailles:" . $cards["taille"]. "</p>";
-                
-                echo "<a href='?idpokemon=". $cards["idpokemon"] ."&action=delete'> Supprimer </a> ";
+                echo "<p>" . $cards["namepoke"].  $cards["idpokemon"]. "</p>";
+              //  echo "<a href='?idpokemon=". $cards["idpokemon"] ."&action=delete'> Supprimer </a> ";
                 // ? indique un paramètre, idpokemon prend la valeur de celui dans cards et le deuxième paramètre est action qui prend delete
-                echo "<br>";
-                echo "<a href='modifier.php?idpokemon=" . $cards['idpokemon'] . "'>Modifier</a>";
-                
+              //  echo "<br>";
+             //   echo "<a href='modifier.php?idpokemon=" . $cards['idpokemon'] . "'>Modifier</a>";
+                 echo "</div>";
                 echo "</div>";
 
-            }
+            }  ?>
             
 
-            ?>
+          
+
+          
 
  </body>
     <?php require_once("bas.php"); ?>

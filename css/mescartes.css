@@ -1,4 +1,4 @@
-   .carte{
+.carte{
     margin:10px;
     padding:25px;
     border: 1px solid ;
@@ -7,7 +7,24 @@
     background-color: rgb(255, 250, 243);
     color:black;
 
-    }
-    #imag{
-        width: 100px;
-    }
+}
+#imag{
+    width: 100px;
+}
+.container-carte{
+    width: 300px;
+}
+#gen1{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ #gen2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#gen3{
+    display: flex;
+    flex-wrap: wrap;
+}
