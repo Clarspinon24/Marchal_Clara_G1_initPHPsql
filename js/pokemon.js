@@ -18,10 +18,10 @@ async function fetchPokemon(min, max, containerId) {
             let request = `https://pokeapi.co/api/v2/pokemon/${i}`;
 
             let data= await fetch(request);
-            console.log(data);
+          
 
             let response = await data.json();
-            console.log(response);
+          
 
            images.push({ src: response.sprites.front_default , text: response.name, id :response.id })
         
@@ -29,7 +29,6 @@ async function fetchPokemon(min, max, containerId) {
             console.error(error)
         }
     }
-   console.log(images);
 
     images.forEach(image => {
         const carte = document.createElement('div');

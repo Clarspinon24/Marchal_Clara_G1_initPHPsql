@@ -1,7 +1,7 @@
 
 <?php
 require_once("haut.php");// haut de la page html 
-require_once("connexion.php");// connexion à la base de donnée
+require_once("php/connexion.php");// connexion à la base de donnée
 
 if ($_POST) { // si la connexion marche
     $mail = $_POST["mail"];// permet de récupérer le mail avec la méthode post
@@ -49,3 +49,4 @@ if ($_POST) { // si la connexion marche
 
 
 </form>
+<?php require_once("bas.php"); ?>

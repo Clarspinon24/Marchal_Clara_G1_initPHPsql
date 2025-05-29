@@ -3,21 +3,6 @@
 require_once("php/connexion.php");
 require_once("haut.php");
 
-if ($_POST) {
-
-    $idpokemon = $_POST["idpokemon"]?? null;  
-    // ??:vérifier si une variable existe et n’est pas nulle, la valeur qui suit et celle par default ici null
-    //J'étais obligé car sinon il me disait que idpokemon n'était pas défini
-    $namepoke = $_POST["namepoke"];
-    $sprite = $_POST["sprite"];
-    $types = $_POST["types"];
-    $poids = $_POST["poids"];
-    $stade_evol = $_POST["stade_evol"];
-    $taille = $_POST["taille"] ;
-   
-    
-
-
     
     try {
         $stmt = $pdo->prepare("INSERT INTO cards (idpokemon,namepoke,sprite,types,poids, stade_evol, taille) 
@@ -39,7 +24,7 @@ if ($_POST) {
         echo $e->getMessage();
     }
 
-}
+
 
 if(isset($_GET['action']) && $_GET['action'] == 'delete') {
 
@@ -59,7 +44,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'delete') {
     }
 
 }
-
 
 
 

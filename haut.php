@@ -8,14 +8,17 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/booster.css">
         <link rel="stylesheet" type="text/css" href="css/mescartes.css">
-    
+        <link rel="stylesheet" type="text/css" href="css/favoris.css">
+        <link rel="stylesheet" type="text/css" href="css/modal.css">
+         <link rel="stylesheet" type="text/css" href="css/formulaire.css">
+
 </head>
 
 <nav >
     
   <ul>
     <li><a href="index.php">Accueil</a></li>
-    <li><a href="carte.php">Pokémons</a></li>
+    <li><a href="collection.php">Pokémons</a></li>
     <li><a href="compte.php">À propos</a></li> 
   </ul> 
 <a id="toggle-btn"><img class="icon" alt="icon" src="image/sidenavferm-.png"></a>
@@ -29,4 +32,5 @@
       <a id="sombre"> <img src="image/sombre.png" alt=""> </a> 
   </aside>
 </nav>  
- 
+
+

@@ -1,8 +1,9 @@
    
 <?php
-require_once("haut.php");
+
 ///// PROFILE.PHP
-require_once("connexion.php");
+require_once("haut.php");
+require_once("php/connexion.php");
 
 
 if(!isset($_SESSION["iduser"])) { 
@@ -12,7 +13,6 @@ if(!isset($_SESSION["iduser"])) {
 }
 
 
-
 if(isset($_GET["action"]) && $_GET["action"] == "deconnexion") {// si on click sur deconnexion
     
     unset($_SESSION["iduser"]);// on enlève iduser de la session
@@ -20,6 +20,9 @@ if(isset($_GET["action"]) && $_GET["action"] == "deconnexion") {// si on click s
     header("location:login.php"); // on ouvre la page login pour pouvoir se reconnecter
 }
 
+
+$stmt = $pdo->query("SELECT * FROM cards"); 
+$cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -31,22 +34,34 @@ if(isset($_GET["action"]) && $_GET["action"] == "deconnexion") {// si on click s
     <title>Document</title>
 </head>
 <body>
-    <br><br><br><br><br><br><br><br><br><br> <!-- simplement pour ne pas être gêné par la nav du fichier php-->
+  <div class="espace"></div>
 
     <?php
 
-        echo "Vous êtes connecté avec l'adresse email " . $_SESSION["mail"]; 
-        // affiche que on est connecté en donnant l'adresse mail de connexion
-    
-    ?>
-    
+    echo "<p> Vous êtes connecté avec l'adresse email " . $_SESSION["mail"]."</p>"; 
+
+  
+    // affiche que on est connecté en donnant l'adresse mail de connexion
+                
+        foreach ($cartes as $key => $cards) {//Pour tout les cartes à l'intérieur de la table cards
+            echo "<div class=' container-carte'>"; // crée une div pour faire une carte
+            echo"<div class='carte carte-devant'>";
+            echo "<img id='imag' src=" .  $cards["sprite"] . ">";
+            echo "<p>" . $cards["namepoke"].  $cards["idpokemon"]. "</p>";
+            //  echo "<a href='?idpokemon=". $cards["idpokemon"] ."&action=delete'> Supprimer </a> ";
+            // ? indique un paramètre, idpokemon prend la valeur de celui dans cards et le deuxième paramètre est action qui prend delete
+            //  echo "<br>";
+            //   echo "<a href='modifier.php?idpokemon=" . $cards['idpokemon'] . "'>Modifier</a>";
+                echo "</div>";
+            echo "</div>";
+
+        }  ?>
+            
+
     <a href="?action=deconnexion">Se déconnecter</a><!--lien pour se deconnecter-->
-    
-
-
-
+          
 </body>
- <?php require_once("bas.php"); ?>
+<?php require_once("bas.php"); ?>
 </html>
     
 

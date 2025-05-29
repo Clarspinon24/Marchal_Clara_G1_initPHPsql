@@ -13,7 +13,7 @@
 
 .sidebar {
   position: fixed;
-   margin-top: 100px;
+  margin-top: -300px;
   left: 0;
   top: 0;
   height: 100%;
@@ -38,8 +38,8 @@ border-radius: 10px;
 color: black;
 }
 
-.sidebar.hidden {
-  transform: translateY(-100%);
+.hidden {
+  transform: translateY(50%);
 }
 
 .content {

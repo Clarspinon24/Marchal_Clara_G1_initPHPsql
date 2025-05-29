@@ -1,6 +1,6 @@
 <?php
 require_once("haut.php");
-require_once("connexion.php");
+require_once("php/connexion.php");
 
 ///// LOGIN.PHP
 
@@ -69,7 +69,7 @@ if ($_POST) {
     <?php } ?>
 
 </body>
-
+<?php require_once("bas.php"); ?>
 </html>
 
 
