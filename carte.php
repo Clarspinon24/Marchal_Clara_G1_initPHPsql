@@ -56,7 +56,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php
                 
             foreach ($cartes as $key => $cards) {//Pour tout les cartes à l'intérieur de la table cards
-                echo "<div class=' container-carte'>"; // crée une div pour faire une carte
+                echo "<div class='container-carte'>"; // crée une div pour faire une carte
                 echo"<div class='carte carte-devant'>";
                 echo "<img id='imag' src=" .  $cards["sprite"] . ">";
                 echo "<p>" . $cards["namepoke"].  $cards["idpokemon"]. "</p>";
