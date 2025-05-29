@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
-    <link rel="stylesheet" type="text/css" href="details.css">  
+    <link rel="stylesheet" type="text/css" href="css/details.css">  
 </head>
 
 
-<body>
+<body> 
     <img id="image" src="" alt=""/>
     <div class=" text"> 
     <p id="nom"></p>
-    <br>
+    
     <p id="type"></p>
-    <br>
+    
     <p id="Poids"></p>
     </div>
+
+    <button id="Favoris">❤️</button>
+   
   
 
 </body>
@@ -26,6 +29,8 @@ let image = document.getElementById("image");
 let nom = document.getElementById("nom");
 let type = document.getElementById("type");
 let poids = document.getElementById("Poids");
+let favoris= document.getElementById("Favoris");
+
 
 
 async function dataPokemon() { 
@@ -38,14 +43,23 @@ let response = await data.json();
 console.log(response);
 
 image.src = response.sprites.front_default;
+
 nom.textContent =`Nom : ${response.name}` ; 
+
+poids.textContent = `Poids : ${response.height} kg`;
 
 type.textContent =`Type 1 : ${response.types[0].type.name}, ${response.types[1].type.name} `;
 
-poids.textContent = `Poids : ${response.height} kg`;
+
+
 }
 
+
 dataPokemon()
+
+
+favoris.addEventListener("click",);
+
 
 </script>
 </html>

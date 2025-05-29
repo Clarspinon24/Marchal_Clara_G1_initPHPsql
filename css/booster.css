@@ -1,0 +1,32 @@
+.pochette{
+z-index: 0;
+width: 220px;
+display: flex;
+justify-content: center;
+}
+#pokemon1{
+width: 180px;
+}
+#pokemon2{
+width: 180px;
+}
+
+#pokemon3{
+width: 180px;
+}
+
+#pokemon4{
+width: 180px;
+}
+#pokemon5{
+width: 180px;
+}
+
+
+.booster{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   margin-top:30px ;
+    
+}
