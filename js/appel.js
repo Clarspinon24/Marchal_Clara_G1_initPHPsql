@@ -1,6 +1,6 @@
 let images = [] ;
    
-async function fetchPokemon() {
+export async function fetchPokemon() {
 
     for (let i = 1; i< 1026;i++){
         try{
