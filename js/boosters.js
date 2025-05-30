@@ -1,4 +1,5 @@
 
+
 let button = document.getElementById("button");
 let ajouter = document.getElementById("ajouter");
 
@@ -21,7 +22,6 @@ let info4 = document.getElementById("info4");
 let info5 = document.getElementById("info5");
 
 const pokemons = [];
-
 
 
 async function booster() {
