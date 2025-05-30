@@ -4,116 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="stylemarketing.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/stylemarketing.css">
+
 
 </head>
 <body>
+ <a  id="button"><img class="pochette" src="image/pochette.png" alt=""></a>
 
-    <nav> 
-		<a href="indexmarketing.html">Accueil</a>
-        <a>Page 1</a>
-        <a>Page 2</a>
-        <a>Page 3</a> 
-        <a>Page 4</a>
-
- 	</nav>
-
-<section class="section1"> 
-    <div class="text">
-    <h2>Viens écouter les musiques en liens si dessous pour bien répondre au quizz de notre site internet !!
-    </h2>
-    </div>
-    <img id="menu" src="menu.webp" alt="image très connu des beatles qui traverse la route">
-   
-</section>
-
-
-  <!-- Slider main container -->
-<section class="swiper">
-    <h2>Chanteurs</h2>
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-            <div class="swiper-slide">
-                <img src="image1.webp" alt="">
-
-            </div>
-
-            <div class="swiper-slide">
-                <img src="image2.webp" alt="">
-            </div>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-  
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-  </section>
-
-<section id="avantage">
-    <h2>Tes dernières écoutes</h2>
-    <div class="block2">
-        <div class="block1">
-            <p class="block">Yoa : Princesse chaos</p>
-            <p class="block">Fireball</p>
-            <p class="block">Nobody Knows</p>
-        </div>
-
-        <div class="block1">
-            <p class="block">Keen'v : Faut que je m'en aille</p>
-            <p class="block">JVKE : golden hour</p>
-            <p class="block">Sexion d'assaut : Désolé</p>
-        </div>
-    </div>
-</section>
-
-  <section >
-    <h2>Partenariat</h2>
-    <div class="partenariat">
-        <a src="https://open.spotify.com/intl-fr" >Spotify</a>
-        <a src="https://www.deezer.com/fr/offers/premium/acq?utm_source=adwords&utm_medium=search&utm_campaign=acq_fr_sea-brd_web_search_perf_tnb-directsub_pure&utm_content=brd_premium_tnb_pure-exact&utm_term=deezer&gad_source=1&gclid=CjwKCAiAzPy8BhBoEiwAbnM9OygMtUJlOdnW5XM1IhK4zdujQyZ2pkQVrp0L6JGplfW2a1ifQf_v-BoCjbYQAvD_BwE">Deezer</a>
-        <a src="https://music.youtube.com" >Youtube Music</a>
-      
-       
-    </div>
-  </section>
-
-  <section id ="formulaire" class="hide"> 
-    <form id = "form" action="" method="post" enctype="multipart/form-data">
-
-        <h3>INSCRIPTION</h3>
-    
-        <label for="pseudo">Pseudo</label>
-        <input type="text" id="pseudo" name="pseudo"  />
-
-        <label for="mail">Email</label>
-        <input type="email" id="mail" name="email" placeholder="Entrez votre email" required />
-
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" />
-
-        <label for="passwordRepeat">Vérification</label>
-        <input type="password" id="passwordRepeat" name="password" />
-
-        <ul id="errorContainer" class="errorContainer"></ul> 
-        <ul id="successContainer" class="successContainer"></ul>
-
+<section class="booster">
+            <article id="booster1">
+                <img id="pokemon1" src="" alt=""/>
+                <p id= "info1"></p>
+            </article> 
         
-        <div> 
-            <input type="checkbox" id="scales" name="scales" checked />
-            <label for="scales">Blablabla accepte les Conditions d'Utilisation</label>
-        </div>
+            <article id="booster2">
+                <img id="pokemon2" src="" alt=""/>
+                <p id= "info2"></p>
+            </article>
+
+           <article id="booster3">
+                <img id="pokemon3" src="" alt=""/>
+                <p id= "info3"></p>
+            </article>
+
+            <article id="booster4">
+                <img id="pokemon4" src="" alt=""/>
+                <p id= "info4"></p>
+            </article>
+
+            <article id="booster5">
+                <img id="pokemon5" src="" alt=""/>
+                <p id= "info5"></p>
+            </article>
+</section>
+            <a id="ajouter" type="">Ajouter à ma collection</a> 
+            
+</body>
     
-        <button type="submit" id="submit">Envoyer</button>  
-    </form>
-  </section>     
-    
-   
-    
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="mainmarketing.js"></script>
+    <script type="module" src="js/appel.js"></script>
+    <script type="module" src="js/boosters.js"> </script>
 </body>
 </html>

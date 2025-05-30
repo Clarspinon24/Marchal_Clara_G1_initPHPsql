@@ -14,12 +14,11 @@
     <div id ="container"></div>
 
                    
-<script src="js/pokemon.js?v=3"></script>
 
+<script type="module" src="js/appel.js"></script>
           
             
     </div>
    </main>
-   <?php require_once("bas.php"); ?>
 </body>
 </html>
