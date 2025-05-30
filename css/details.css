@@ -1,4 +1,8 @@
-
+.background{
+    width: 100%;
+    z-index: -200;
+    overflow: hidden;
+}
 
 #button{
     border: 2px black solid;
