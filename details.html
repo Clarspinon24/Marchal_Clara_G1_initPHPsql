@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
-    <link rel="stylesheet" type="text/css" href="css/details.css">  
+    <link rel="stylesheet" type="text/css" href="css/details.css?v=2">  
 </head>
 
 
 <body> 
-     <img class="background" src="image/whothatpokemon.jpeg" alt=""/>
-     
-    <img id="image" src="" alt=""/>
-    <div class=" text"> 
-    <p id="nom"></p>
+  
+    <div class="content"> 
+
+ 
     
-    <p id="type"></p>
+    <img id="image" src="" alt=""/>
+    
+    <div class=" text"> 
+   
+    <h1 id="nom"></h1> 
     
     <p id="Poids"></p>
-    </div>
+    
+    <p id="type"></p>
 
     <button id="Favoris">❤️</button>
    
+    </div>
+    <img  id ="background"src="image/whothatpokemon.jpeg" alt="">
+    </div>
+   
+
   
 
 </body>
@@ -46,9 +55,9 @@ console.log(response);
 
 image.src = response.sprites.front_default;
 
-nom.textContent =`Nom : ${response.name}` ; 
+nom.textContent =`${response.name}` ; 
 
-poids.textContent = `Poids : ${response.height} kg`;
+poids.textContent = `Poids : ${response.weight} kg`;
 
 type.textContent =`Type 1 : ${response.types[0].type.name}, ${response.types[1].type.name} `;
 
