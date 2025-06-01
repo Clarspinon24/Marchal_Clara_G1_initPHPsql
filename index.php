@@ -6,35 +6,10 @@
 
  <a  id="button"><img class="pochette" src="image/pochette.png" alt=""></a>
 
-<section class="booster">
-            <article id="booster1">
-                <img id="pokemon1" src="" alt=""/>
-                <p id= "info1"></p>
-            </article> 
-        
-            <article id="booster2">
-                <img id="pokemon2" src="" alt=""/>
-                <p id= "info2"></p>
-            </article>
-
-           <article id="booster3">
-                <img id="pokemon3" src="" alt=""/>
-                <p id= "info3"></p>
-            </article>
-
-            <article id="booster4">
-                <img id="pokemon4" src="" alt=""/>
-                <p id= "info4"></p>
-            </article>
-
-            <article id="booster5">
-                <img id="pokemon5" src="" alt=""/>
-                <p id= "info5"></p>
-            </article>
-</section>
+<div id="container_booster">
+       
+</div>
             <a id="ajouter" type="">Ajouter à ma collection</a> 
-            
-
      
 <ul>
     <li class=" tab tab-1 tab-active">génération 1</li>

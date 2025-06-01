@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/sidenav.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/booster.css">
-        <link rel="stylesheet" type="text/css" href="css/mescartes.css">
+        <link rel="stylesheet" type="text/css" href="css/mescartes.css?v=2">
         <link rel="stylesheet" type="text/css" href="css/favoris.css">
         <link rel="stylesheet" type="text/css" href="css/modal.css">
          <link rel="stylesheet" type="text/css" href="css/formulaire.css">

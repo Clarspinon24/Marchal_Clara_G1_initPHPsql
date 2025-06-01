@@ -17,7 +17,7 @@
     
     <script src="js/pokemon.js"> </script>
     <script src="js/sidenav.js"> </script>
-    <script src="js/boosters.js"> </script>
+    <script src="js/boosters2.js"> </script>
     <script src="js/modal.js"> </script>
 </footer>
 

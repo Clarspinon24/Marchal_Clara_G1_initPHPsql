@@ -24,15 +24,18 @@ if(isset($_GET["action"]) && $_GET["action"] == "deconnexion") {// si on click s
 $stmt = $pdo->query("SELECT * FROM cards"); 
 $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$stmt = $pdo->prepare("
+    SELECT cards.* 
+    FROM cards
+    INNER JOIN favoris ON cards.idpokemon = favoris.idpoke
+");
+$stmt->execute();
+$favoris = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
   <div class="espace"></div>
 
@@ -41,21 +44,27 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo "<p> Vous êtes connecté avec l'adresse email " . $_SESSION["mail"]."</p>"; 
 
   
-    // affiche que on est connecté en donnant l'adresse mail de connexion
-                
-        foreach ($cartes as $key => $cards) {//Pour tout les cartes à l'intérieur de la table cards
-            echo "<div class=' container-carte'>"; // crée une div pour faire une carte
-            echo"<div class='carte carte-devant'>";
-            echo "<img id='imag' src=" .  $cards["sprite"] . ">";
-            echo "<p>" . $cards["namepoke"].  $cards["idpokemon"]. "</p>";
-            //  echo "<a href='?idpokemon=". $cards["idpokemon"] ."&action=delete'> Supprimer </a> ";
-            // ? indique un paramètre, idpokemon prend la valeur de celui dans cards et le deuxième paramètre est action qui prend delete
-            //  echo "<br>";
-            //   echo "<a href='modifier.php?idpokemon=" . $cards['idpokemon'] . "'>Modifier</a>";
-                echo "</div>";
-            echo "</div>";
 
-        }  ?>
+echo "<h2>Favoris</h2>";
+echo "<div class='container-carte'>";
+foreach ($favoris as $fav) {
+    echo "<div class='carte carte-devant'>";
+    echo "<img id='imag' src='" . htmlspecialchars($fav["sprite"]) . "'>";
+    echo "<p>" . htmlspecialchars($fav["namepoke"]) . ' #' . htmlspecialchars($fav["idpokemon"]) . "</p>";
+    echo "</div>";
+}
+echo "</div>"; 
+
+echo "<h2>Mes cartes</h2>";
+echo "<div class='container-carte'>";
+foreach ($cartes as $cards) {
+    echo "<div class='carte carte-devant'>";
+    echo "<img id='imag' src='" . htmlspecialchars($cards["sprite"]) . "'>";
+    echo "<p>" . htmlspecialchars($cards["namepoke"]) . ' #' . htmlspecialchars($cards["idpokemon"]) . "</p>";
+    echo "</div>";
+}
+echo "</div>"; 
+        ?>
             
 
     <a href="?action=deconnexion">Se déconnecter</a><!--lien pour se deconnecter-->
