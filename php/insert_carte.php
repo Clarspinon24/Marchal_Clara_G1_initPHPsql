@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 $donnees = json_decode(file_get_contents('php://input'), true);//pourquoi true ?
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO cards (idpokemon,namepoke,sprite,types,poids, taille) 
+        $stmt = $pdo->prepare("INSERT IGNORE INTO cards (idpokemon,namepoke,sprite,types,poids, taille) 
     VALUES(:idpokemon,:namepoke,:sprite,:types,:poids, :taille) "); 
     // les variable avec les : sont comme les paramètres d'une fonction
 

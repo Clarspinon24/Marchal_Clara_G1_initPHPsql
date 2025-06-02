@@ -24,11 +24,7 @@ if(isset($_GET["action"]) && $_GET["action"] == "deconnexion") {// si on click s
 $stmt = $pdo->query("SELECT * FROM cards"); 
 $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmt = $pdo->prepare("
-    SELECT cards.* 
-    FROM cards
-    INNER JOIN favoris ON cards.idpokemon = favoris.idpoke
-");
+$stmt = $pdo->prepare("SELECT cards.* FROM cards INNER JOIN favoris ON cards.idpokemon = favoris.idpoke ");
 $stmt->execute();
 $favoris = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -44,7 +40,7 @@ $favoris = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo "<p> Vous êtes connecté avec l'adresse email " . $_SESSION["mail"]."</p>"; 
 
   
-
+    // affiche que on est connecté en donnant l'adresse mail de connexion
 echo "<h2>Favoris</h2>";
 echo "<div class='container-carte'>";
 foreach ($favoris as $fav) {

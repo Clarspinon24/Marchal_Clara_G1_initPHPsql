@@ -1,16 +1,9 @@
 <?php require_once("haut.php"); ?>
 
 <body>
-     
-    
-
- <a  id="button"><img class="pochette" src="image/pochette.png" alt=""></a>
-
-<div id="container_booster">
-       
-</div>
-            <a id="ajouter" type="">Ajouter à ma collection</a> 
-     
+     <br><br><br><br><br><br>
+    <button > <a id="ouvrir" href="indexmarketing.html">ouvre ton booster</a></button>
+      
 <ul>
     <li class=" tab tab-1 tab-active">génération 1</li>
     <li class=" tab tab-2">génération 2</li>
@@ -37,9 +30,9 @@
 
 <div id="container"></div>
 
-<div id="gen1"> </div>
-<div id="gen2"> </div>
-<div id="gen3"> </div>
+<div id="gen1" class="generation"></div>
+<div id="gen2" class="generation hide"></div>
+<div id="gen3" class="generation hide"></div>
 
 
 

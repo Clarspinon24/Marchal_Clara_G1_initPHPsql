@@ -23,7 +23,7 @@ async function fetchPokemon(min, max, containerId) {
             let response = await data.json();
           
 
-           images.push({ src: response.sprites.front_default , text: response.name, id :response.id ,taille : response.height,type1: response.types[0].type.name, type2: response.types[1].type.name, poids: response.weight})
+           images.push({ src: response.sprites.front_default , text: response.name, id :response.id ,taille : response.height,type1: response.types[0].type.name,poids: response.weight})
         
         } catch(error){
             console.error(error)

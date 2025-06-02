@@ -2,9 +2,10 @@
 let ajouter = document.getElementById("ajouter");
 let button = document.getElementById("button");
 let container_booster = document.getElementById("container_booster");
+let idpoke=0;
 
 let images = [] ;
-export async function booster() {
+ async function booster() {
   for (let i = 0; i < 5; i++) {
     let randomNumber = Math.floor(Math.random() * 151) + 1;
 
@@ -22,6 +23,8 @@ export async function booster() {
         cris: response.cries,
         type1: response.types[0].type.name,
       });
+
+      button.style.display="none";
 
     } catch (error) {
       console.error(error);
@@ -48,7 +51,6 @@ export async function booster() {
     container_booster.appendChild(carte);
   });
 
-  button.style.display = "none";
 }
 
 
@@ -64,6 +66,9 @@ body: JSON.stringify(images)
 .then(response => response.json())
 .then(data => {
     console.log('✅ Réponse serveur :', data);
+    container_booster.innerHTML = ""; 
+    images=[];
+    window.open("index.php");
 })
 .catch(error => {
 console.error('❌ Erreur envoi BDD :', error);
@@ -72,8 +77,29 @@ console.error('❌ Erreur envoi BDD :', error);
 }
 
 
+const dataPokemon = async() => { 
 
+let request = `https://pokeapi.co/api/v2/pokemon/${idpoke}`;
 
-button.addEventListener("click", booster);
+let data= await fetch(request);
+
+let response = await data.json();
+console.log(response);
+
+localStorage.setItem("Idpoke", idpoke);
+window.open("details.html");
+   
+}
+
+button.addEventListener("click", async () => {
+  if (button.disabled) return;
+
+  button.disabled = true; 
+  await booster();
+  setTimeout(() => {
+    button.disabled = false; 
+  }, 120000); 
+});
+
 ajouter.addEventListener("click", envoyer_data);   
    
